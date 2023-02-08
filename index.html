@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPT x me wqwq</title>
+  <style>
+    body {
+        font-size: larger;
+        font-weight: 900;
+    }
+    .calculator {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .display {
+      height: 80px;
+      font-size: 36px;
+      text-align: right;
+      padding-right: 10px;
+      margin-bottom: 20px;
+      border: 1px solid black;
+    }
+    button {
+        width: 50px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+    }
+    #btnPlus, #btnMinus, #btnMultiply, #btnDivide {
+        background-color: orangered;
+    }
+    #btnEqual, #btnClear {
+        background-color: blue;
+    }
+    p {
+        font-size: smaller;
+        font-weight: 300;
+        color: grey;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display"></div>
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+    <button id="btn3">3</button>
+    <button id="btnPlus">+</button>
+    <br><br>
+    <button id="btn4">4</button>
+    <button id="btn5">5</button>
+    <button id="btn6">6</button>
+    <button id="btnMinus">-</button>
+    <br><br>
+    <button id="btn7">7</button>
+    <button id="btn8">8</button>
+    <button id="btn9">9</button>
+    <button id="btnMultiply">x</button>
+    <br><br>
+    <button id="btn0">0</button>
+    <button id="btnClear">C</button>
+    <button id="btnEqual">=</button>
+    <button id="btnDivide">/</button>
+    <footer>
+        <p>&copy;iqbalmaulana</p>
+    </footer>
+  </div>
+  
+  <script>
+    const display = document.querySelector("#display");
+    let operator = "";
+    let operand1 = 0;
+    let operand2 = 0;
+
+    document.querySelector("#btn1").addEventListener("click", function() {
+      display.innerHTML += "1";
+    });
+    document.querySelector("#btn2").addEventListener("click", function() {
+      display.innerHTML += "2";
+    });
+    document.querySelector("#btn3").addEventListener("click", function() {
+      display.innerHTML += "3";
+    });
+    document.querySelector("#btn4").addEventListener("click", function() {
+      display.innerHTML += "4";
+    });
+    document.querySelector("#btn5").addEventListener("click", function() {
+      display.innerHTML += "5";
+    });
+    document.querySelector("#btn6").addEventListener("click", function() {
+      display.innerHTML += "6";
+    });
+    document.querySelector("#btn7").addEventListener("click", function() {
+      display.innerHTML += "7";
+    });
+    document.querySelector("#btn8").addEventListener("click", function() {
+      display.innerHTML += "8";
+    });
+    document.querySelector("#btn9").addEventListener("click", function() {
+      display.innerHTML += "9";
+    });
+    document.querySelector("#btn0").addEventListener("click", function() {
+      display.innerHTML += "0";
+    });
+    document.querySelector("#btnPlus").addEventListener("click", function() {
+      operator = "+";
+      operand1 = parseInt(display.innerHTML);
+      display.innerHTML = "";
+    });
+    document.querySelector("#btnMinus").addEventListener("click", function() {
+      operator = "-";
+      operand1 = parseInt(display.innerHTML);
+      display.innerHTML = "";
+    });
+    document.querySelector("#btnMultiply").addEventListener("click", function() {
+      operator = "*";
+      operand1 = parseInt(display.innerHTML);
+      display.innerHTML = "";
+    });
+    document.querySelector("#btnDivide").addEventListener("click", function() {
+      operator = "/";
+      operand1 = parseInt(display.innerHTML);
+      display.innerHTML = "";
+    });
+    document.querySelector("#btnClear").addEventListener("click", function() {
+      display.innerHTML = "";
+      operand1 = 0;
+      operand2 = 0;
+      operator = "";
+    });
+    document.querySelector("#btnEqual").addEventListener("click", function() {
+      operand2 = parseInt(display.innerHTML);
+      switch (operator) {
+        case "+":
+          display.innerHTML = operand1 + operand2;
+          break;
+        case "-":
+          display.innerHTML = operand1 - operand2;
+          break;
+        case "*":
+          display.innerHTML = operand1 * operand2;
+          break;
+        case "/":
+          display.innerHTML = operand1 / operand2;
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
+
